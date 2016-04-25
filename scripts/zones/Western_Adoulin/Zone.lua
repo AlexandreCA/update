@@ -32,6 +32,10 @@ end;
 -----------------------------------
 
 function onRegionEnter(player,region)
+    local regionID =region:GetRegionID();
+    if (regionID==1 and player:getCurrentMission(SOA) == HEARTWINGS_AND_THE_KINDHEARTED then
+        player:startEvent(0x2);
+    end
 end;
 
 -----------------------------------
@@ -51,6 +55,4 @@ function onEventFinish(player,csid,option)
 --printf("CSID: %u",csid);
 --printf("RESULT: %u",option);
 end;
-
-
 
